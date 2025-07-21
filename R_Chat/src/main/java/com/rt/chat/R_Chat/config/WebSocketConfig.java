@@ -27,10 +27,4 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer{
 		registry.enableSimpleBroker("/topic");
 		registry.setApplicationDestinationPrefixes("/app");
 	}
-	
-	 @Override
-	    public boolean configureMessageConverters(List<org.springframework.messaging.converter.MessageConverter> converters) {
-	        converters.add(new MappingJackson2MessageConverter()); // Ensures JSON conversion
-	        return false; // Keep default converters as well
-	    }
 }
